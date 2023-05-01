@@ -1,25 +1,59 @@
-import logo from './logo.svg';
-import './App.css';
+const App = () => {
+  const basketballTeam = {
+    center: "Joel Embiid",
+    powerForward: "Anthony Davis",
+    smallForward: "LeBron James",
+    shootingGuard: "James Harden",
+    pointGuard: "Stephen Curry",
+  };
+  const displayTeam = (team) => {
+    if (team != null){
+      return Object.keys(team).map((key) => (
+        <ul>
+          <li key={key}>
+            {key}: {team[key]}
+          </li>
+        </ul>
+      ));
+    }
+    else 
+    {
+      return <h1>No team provided</h1>
+    }
+  }
+  const elementOne = <h1>Hello, World!</h1>;
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+  const name = "John Doe";
+  const elementTwo = <h1>Hello, World! My name is {name}</h1>;
+
+  const elementThree = <h1>{Math.random()}</h1>;
+
+  const getRandomNumber = (max) => Math.floor(Math.random() * max);
+  const elementFour = <h1>{getRandomNumber(3)}</h1>;
+
+  const url = "https://bit.ly/3CqHp70";
+  const description = "This image contains a cat wearing a surgical mask";
+  const elementFive = (
+    <img src={url} alt={description} width="500" height="350" />
   );
-}
+  const elementSix = (
+    <>
+      <h1>Hello, World!</h1>
+      <h2>My name is John Doe</h2>
+    </>
+  );
+
+  return (
+    <>
+      {displayTeam(basketballTeam)}
+      {elementOne}
+      {elementTwo}
+      {elementThree}
+      {elementFour}
+      {elementFive}
+      {elementSix}
+    </>
+  );
+};
 
 export default App;
