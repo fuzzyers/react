@@ -21,6 +21,24 @@ const App = () => {
       return <h1>No team provided</h1>
     }
   }
+
+  const fruits = [
+    "strawberry",
+    "banana",
+    "apple",
+    "blueberry",
+    "orange",
+    "grape",
+  ];
+  const filterFruits = (fruits) => {
+      if (fruits != null){
+        return fruits.filter(fruit => fruit.length <= 6)
+        .map(fruit => <li key={fruit}>{fruit}</li>)
+      }
+      else {
+        return <h1>No fruit given</h1>
+      }
+    }
   const elementOne = <h1>Hello, World!</h1>;
 
   const name = "John Doe";
@@ -46,6 +64,9 @@ const App = () => {
   return (
     <>
       {displayTeam(basketballTeam)}
+      <ul>
+      {filterFruits()}
+      </ul>
       {elementOne}
       {elementTwo}
       {elementThree}
