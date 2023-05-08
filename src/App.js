@@ -16,6 +16,8 @@ import Welcome from "./components/Welcome"; // Importing the Welcome function co
 import Hook from "./components/Hook";
 import Propsss from "./components/Proptrio";
 import Chuck from "./components/Chuck";
+import Parallel from "./components/Parralel";
+
 
 const App = () => {
   const basketballTeam = {
@@ -83,6 +85,7 @@ const App = () => {
   return (
     <>
       <h1> Hello World</h1>
+      <Parallel/>
       <Chuck/>
       <Propsss firstName="John" lastName="Lennon" bandName="The Beatles" />
       <Welcome firstname="Jackson"/>
