@@ -1,3 +1,22 @@
+//When useEffect is called it calls the function post and gets an object returned.
+//when using props we can destruct them in the function and request what parts of it we want in
+//stead of having to use square brackets or dotnotation to access the data the curly braces break it down
+/*
+const MyComponent = ({ name, age }) => {
+  return (
+    <div>
+      <p>My name is {name}.</p>
+      <p>I am {age} years old.</p>
+    </div>
+  );
+};
+*///From ChatGPT
+
+import Welcome from "./components/Welcome"; // Importing the Welcome function component
+import Hook from "./components/Hook";
+import Propsss from "./components/Proptrio";
+import Chuck from "./components/Chuck";
+
 const App = () => {
   const basketballTeam = {
     center: "Joel Embiid",
@@ -63,9 +82,14 @@ const App = () => {
 
   return (
     <>
+      <h1> Hello World</h1>
+      <Chuck/>
+      <Propsss firstName="John" lastName="Lennon" bandName="The Beatles" />
+      <Welcome firstname="Jackson"/>
+      <Hook/>
       {displayTeam(basketballTeam)}
       <ul>
-      {filterFruits()}
+      {filterFruits(fruits)}
       </ul>
       {elementOne}
       {elementTwo}
